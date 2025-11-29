@@ -35,9 +35,9 @@ const Resume = () => {
                     forEducation: false,
                     company_name: "Alvo Mobility LLP",
                     startDate: "2024-09-12",
-                    endDate: "current",
+                    endDate: "Present",
                     jobTitle: "Web Developer (Front-end developer)",
-                    summary: "Developed the Booking Rentals Car (BRC) platform from scratch, implementing a seamless rental booking experience. Additionally, maintained and enhanced the North Car Rentals system by adding new features to improve functionality and user experience"
+                    summary: " Developed and delivered scalable web applications in collaboration with cross - functional teams. Ensured optimal user experiences through performance optimization and responsive design principles. Led development of key features, managing all phases from planning to deployment. Enhanced code quality, SEO performance, and project outcomes by contributing ideas and supporting teammates. Implemented reward points system allowing users to earn based on reservation prices for future bookings."
                 },
                 {
                     forEducation: false,
@@ -45,7 +45,7 @@ const Resume = () => {
                     startDate: "2024-05-18",
                     endDate: "2024-07-25",
                     jobTitle: "Web Developer",
-                    summary: "Developed a project called Maa foundation."
+                    summary: "Maa Foundation is a social-impact web platform designed to support women empowerment, skill development, and community welfare initiatives. The purpose of the project is to create an accessible digital space where women can learn, connect, and benefit from programs that help them achieve financial independence and personal growth."
                 },
 
                 // Add more data as needed
@@ -53,9 +53,10 @@ const Resume = () => {
             skills: [
                 { name: "HTML ", percentage: 85 },
                 { name: "CSS ", percentage: 90 },
-                { name: "GitHub ", percentage: 60 },
                 { name: "JavaScript", percentage: 70 },
                 { name: "React", percentage: 75 },
+                { name: "PHP", percentage: 55 },
+                { name: "GitHub ", percentage: 60 },
                 { name: "Bootstrap", percentage: 60 },
                 { name: "Tailwind", percentage: 50 },
 
@@ -122,7 +123,7 @@ const Resume = () => {
                 </div>
             </div>
             <div className="w-100 text-center bg-dark">
-                <a href="https://drive.google.com/uc?export=download&id=1mjphMlQ-pSxJvCdDgI3F42R-htfGWmEG">
+                <a href="https://drive.google.com/uc?export=download&id=1npJoa3_xJAQlrOI0u57NouTgzb4_E5r7">
                     <Button type="text" className="Nothing border-dark mt-5 downloadCV">Download CV</Button>
                 </a>
             </div>

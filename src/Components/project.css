@@ -28,7 +28,7 @@
 }
 
 .project-image:hover {
-  transform: scale(1.2); /* Scale up the image on hover */
+  transform: scale(1.05); /* Scale up the image on hover */
 }
 
 .curser {

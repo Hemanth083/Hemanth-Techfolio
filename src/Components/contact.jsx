@@ -1,10 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import './project.css';
+import emailjs from "emailjs-com";
 import { Form, Button } from 'react-bootstrap';
 
 const Contact = () => {
     const [animationTriggered, setAnimationTriggered] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            e.target,
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        )
+            .then(() => {
+                alert("Message sent successfully!");
+                e.target.reset();
+            })
+            .catch((err) => {
+                console.error("EmailJS Error:", err);
+                alert("Failed to send message!");
+            });
+    };
 
     const userData = {
         user: {
@@ -49,42 +69,74 @@ const Contact = () => {
                     </div>
                 )}
             </div>
-            <Form style={{ width: '80%' }}>
-                <div className={`d-flex flex-row w-100 form ${menuOpen ? 'menu-open' : ''}`}>
-                    <div className='w-50 formsub mr-4'>
-                        <Form.Group controlId="formFullName">
-                            <Form.Control required className='mb-4 inputfield' type="text" placeholder="Full Name" />
+            <Form style={{ width: "80%" }} onSubmit={sendEmail}>
+                <div className="d-flex flex-row w-100 form">
+
+                    {/* Left Section */}
+                    <div className="w-50 formsub mr-4">
+
+                        <Form.Group>
+                            <Form.Control
+                                required
+                                name="from_name"
+                                className="mb-4 inputfield"
+                                type="text"
+                                placeholder="Full Name"
+                            />
                         </Form.Group>
-                        <Form.Group controlId="formEmail">
-                            <Form.Control required className='mb-4 inputfield' type="email" placeholder="Email" />
+
+                        <Form.Group>
+                            <Form.Control
+                                required
+                                name="from_email"
+                                className="mb-4 inputfield"
+                                type="email"
+                                placeholder="Email"
+                            />
                         </Form.Group>
-                        <Form.Group controlId="formSubject">
-                            <Form.Control required className="mb-5 inputfield" type="text" placeholder="Subject" />
+
+                        <Form.Group>
+                            <Form.Control
+                                required
+                                name="title"
+                                className="mb-5 inputfield"
+                                type="text"
+                                placeholder="Subject"
+                            />
                         </Form.Group>
+
                         <Button
                             style={{
                                 background: "transparent",
                                 borderRadius: "0px",
-                                border: 'none',
-                                outline: 'none',
-                                boxShadow: 'none',
+                                border: "none",
+                                outline: "none",
+                                boxShadow: "none",
                                 borderTop: "2px solid salmon",
                                 borderBottom: "2px solid salmon",
-                                borderLeft: "2px solid transparent",
-                                borderRight: "2px solid transparent"
                             }}
-                            variant="primary"
                             type="submit"
-                            className='button text-secondary'
+                            className="button text-secondary"
                         >
                             Send Message
                         </Button>
+
                     </div>
-                    <div className='w-50 formsub'>
-                        <Form.Group controlId="formMessage">
-                            <Form.Control as="textarea" rows={6} placeholder="Enter your message" className='inputfield' />
+
+                    {/* Right Section */}
+                    <div className="w-50 formsub">
+                        <Form.Group>
+                            <Form.Control
+                                required
+                                as="textarea"
+                                name="message"
+                                rows={6}
+                                placeholder="Enter your message"
+                                className="inputfield"
+                            />
                         </Form.Group>
                     </div>
+
                 </div>
             </Form>
         </div>

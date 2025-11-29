@@ -22,11 +22,11 @@ const localData = {
                 liveurl: "https://northcarrentals.com/"
             },
             {
-                title: "Booking Rental Cars",
+                title: "Car Rerntal Booking ",
                 techStack: ["JavaScript", "CSS", "HTML", "PHP"],
-                image: { url: img7 },   
-                description: "Developed the Booking Rentals Car (BRC) application from the ground up, integrating key features such as a calendar for seamless scheduling, a timer for optimized booking management, smooth loaders for better user experience, and a fully mobile-responsive design, along with various other enhancements to improve functionality and performance",
-                liveurl: "http://139.177.197.74/"
+                image: { url: img7 },
+                description: "The Car Rental Booking Application is a fully functional web platform designed to simplify and automate the end-to-end vehicle rental process. Built using PHP, JavaScript, and MySQL, the system allows users to search for cars, compare prices, apply reward points, select add-ons, and complete bookings through a seamless, intuitive interface. The application features real-time pricing, availability checks, multi-language support, and a secure booking flow to ensure a smooth user experience.On the admin side, the platform provides comprehensive tools to manage vehicles, customers, reservations, pricing rules, offers, and reward systems.A dynamic reward engine encourages customer retention by awarding points based on rental value, allowing users to redeem them on future bookings.The system is highly optimized with lazy loading, caching, responsive UI design, and scalable backend architecture.With features like automated notifications, payment gateway integration, office hours fee calculations, and add- on services, the application delivers a complete car rental solution suitable for startups and growing rental businesses.",
+                liveurl: "https://carrentalsbooking.com/"
             },
             {
                 title: "NorthStar",
@@ -51,19 +51,19 @@ const localData = {
             },
 
             {
-                title: "Recipe Book",
-                techStack: ["React", "JavaScript", "CSS", "Axios", "Bootstrap"],
+                title: "RezGlobe",
+                techStack: ["JavaScript", "CSS", "HTML", "PHP"],
                 image: { url: img4 },
-                description: "This Application is build to display a list of Recipes using RecipeAPI where we can search Recipes based on the dish name",
-                liveurl: "https://recipe-book-amber.vercel.app/"
+                description: "RexGloade RMS is a powerful, centralized Rate Management System designed specifically for car rental companies to streamline and automate their pricing operations. The platform enables rental businesses to create, manage, and update rates across multiple locations, seasons, vehicle categories, and customer segments—all from a single, intuitive interface.Built to eliminate manual rate adjustments, RexGloade ensures accuracy, consistency, and real- time updates across all digital platforms.Rental companies can optimize revenue by leveraging dynamic pricing rules, time - based pricing, peak - hour logic, and automated charges such as one - way fees, night fees, distance limits, and add - ons.",
+                liveurl: "https://rezglobe.com/"
             },
-            {
-                title: "RomiFinance",
-                techStack: ["CSS", "HTML"],
-                image: { url: img2 },
-                description: "A simple HTML and CSS project for finance",
-                liveurl: "https://romi-finance-lyart.vercel.app/"
-            },
+            // {
+            //     title: "RomiFinance",
+            //     techStack: ["CSS", "HTML"],
+            //     image: { url: img2 },
+            //     description: "A simple HTML and CSS project for finance",
+            //     liveurl: "https://romi-finance-lyart.vercel.app/"
+            // },
             {
                 title: "Old Portfolio",
                 techStack: ["JavaScript", "CSS", "HTML"],

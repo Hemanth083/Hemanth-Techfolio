@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import myImage from '../assets/myImage.jpg';
+import { useState, useEffect, useRef } from 'react';
+import myImage from '../assets/MyImage4.jpg';
 import './styles.css';
 import gitLogo from "../assets/gitHubLogo.png";
 import linked from "../assets/linked.webp";
@@ -30,6 +30,106 @@ const localData = {
 const About = () => {
     const [userData, setUserData] = useState(localData);
 
+    const [expanded, setExpanded] = useState(false);
+    const boxRefs = useRef([]);
+
+    // const boxRefs1 = useRef([]);
+    const [activeIndex, setActiveIndex] = useState(-1);
+
+    useEffect(() => {
+        let current = 0;
+
+        // Cycle every 3 seconds
+        const interval = setInterval(() => {
+            setActiveIndex(current);
+            current = (current + 1) % userData.user.social_handles.length;
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, [userData.user.social_handles.length]);
+    useEffect(() => {
+        let scrolling = false;
+        let animationFrame;
+
+        // Physics values
+        const gravity = 1;
+        const friction = 0.7;
+
+        const velocities = [];
+        const positions = [];
+
+        // Initialize physics arrays
+        userData.user.social_handles.forEach((_, i) => {
+            velocities[i] = { x: 0, y: 0 };
+            positions[i] = { x: 0, y: 0 };
+        });
+
+        const handleScroll = () => {
+            scrolling = true;
+
+            // Give each box a small random push
+            velocities.forEach(v => {
+                v.x += (Math.random() - 0.5) * 2;
+                v.y += (Math.random() - 1.5) * 2; // upward force
+            });
+        };
+
+        const animate = () => {
+            velocities.forEach((v, i) => {
+                // Apply physics forces
+                v.y += gravity;
+                v.x *= friction;
+                v.y *= friction;
+
+                // Update positions
+                positions[i].x += v.x;
+                positions[i].y += v.y;
+
+                // Return to origin when scroll stops
+                if (!scrolling) {
+                    positions[i].x *= 0.9;
+                    positions[i].y *= 0.9;
+                }
+
+                // Apply CSS transform to container
+                const el = boxRefs.current[i];
+                if (el) {
+                    el.style.transform = `translate(${positions[i].x}px, ${positions[i].y}px)`;
+                }
+            });
+
+            animationFrame = requestAnimationFrame(animate);
+        };
+
+        animate();
+
+        let stopTimer;
+        const onScroll = () => {
+            handleScroll();
+
+            clearTimeout(stopTimer);
+            stopTimer = setTimeout(() => {
+                scrolling = false; // Return gracefully
+            }, 150);
+        };
+
+        window.addEventListener("scroll", onScroll);
+
+        return () => {
+            cancelAnimationFrame(animationFrame);
+            window.removeEventListener("scroll", onScroll);
+        };
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setExpanded(window.scrollY > 40);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+    
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -40,7 +140,7 @@ const About = () => {
                 {userData && userData.user && userData.user.about && (
                     <div className="bg-dark text-white Image-Container d-flex align-items-center about-Container justify-content-center flex-row w-100">
                         <div className="w-50 h-100 cropped-image-container d-flex align-items-center justify-content-center">
-                            <img className="img-fluid mainImage" width="100%" height="auto" src={myImage} alt="Avatar" />
+                                <img src={myImage} alt="Profile" className={`img-wrapper ${expanded ? "img-expanded" : ""}`} />
                         </div>
                         <div className="about-content w-50 h-50 d-flex align-items-center justify-content-center">
                             <div className="w-75 d-flex align-items-start justify-content-start flex-column">
@@ -51,9 +151,13 @@ const About = () => {
                                 </p>
                                 <div className="social-media justify-content-between align-items-center d-flex mt-3">
                                     {userData.user.social_handles.map((social, index) => (
-                                        <div className="Social-images z-3" key={index}>
+                                        <div
+                                            className={`Social-images z-3`}
+                                            key={index}
+                                            ref={el => (boxRefs.current[index] = el)}
+                                        >
                                             <a href={social.link} target="_blank" rel="noopener noreferrer">
-                                                <img className="MediaImage" width="20px" height="auto" src={social.image.url} alt={`Social Image ${index}`} />
+                                                <img className={`MediaImage  ${activeIndex === index ? "auto-hover" : ""}`} width="20px" ref={el => (boxRefs.current[index] = el)} src={social.image.url} alt="" />
                                             </a>
                                         </div>
                                     ))}
