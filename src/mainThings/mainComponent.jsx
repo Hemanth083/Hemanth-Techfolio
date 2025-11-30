@@ -56,10 +56,15 @@ function MainComponent() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-
     const handleNavClick = (page) => {
-        setCurrentPage(page);
+        const section = document.getElementById(page.toLowerCase());
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
     };
+
+
+
 
     if (loading) return <div><h1 className='text-dark'>Loading...</h1></div>;
     if (error) return <div>Error: {error}</div>;
