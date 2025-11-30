@@ -36,8 +36,8 @@ const Resume = () => {
                     company_name: "Alvo Mobility LLP",
                     startDate: "2024-09-12",
                     endDate: "Present",
-                    jobTitle: "Web Developer (Front-end developer)",
-                    summary: " Developed and delivered scalable web applications in collaboration with cross - functional teams. Ensured optimal user experiences through performance optimization and responsive design principles. Led development of key features, managing all phases from planning to deployment. Enhanced code quality, SEO performance, and project outcomes by contributing ideas and supporting teammates. Implemented reward points system allowing users to earn based on reservation prices for future bookings."
+                    jobTitle: "Software Engineer (Front-end developer)",
+                    summary: "Developed and shipped scalable web applications while collaborating with cross-functional teams. Improved user experience through performance optimization, responsive UI design, and clean code practices. Took ownership of key features from planning to deployment, contributing to better SEO performance and overall project quality. Implemented a reward points system that allows users to earn points based on reservation value and redeem them on future bookings."
                 },
                 {
                     forEducation: false,

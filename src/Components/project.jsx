@@ -25,7 +25,7 @@ const localData = {
                 title: "Car Rerntal Booking ",
                 techStack: ["JavaScript", "CSS", "HTML", "PHP"],
                 image: { url: img7 },
-                description: "The Car Rental Booking Application is a fully functional web platform designed to simplify and automate the end-to-end vehicle rental process. Built using PHP, JavaScript, and MySQL, the system allows users to search for cars, compare prices, apply reward points, select add-ons, and complete bookings through a seamless, intuitive interface. The application features real-time pricing, availability checks, multi-language support, and a secure booking flow to ensure a smooth user experience.On the admin side, the platform provides comprehensive tools to manage vehicles, customers, reservations, pricing rules, offers, and reward systems.A dynamic reward engine encourages customer retention by awarding points based on rental value, allowing users to redeem them on future bookings.The system is highly optimized with lazy loading, caching, responsive UI design, and scalable backend architecture.With features like automated notifications, payment gateway integration, office hours fee calculations, and add- on services, the application delivers a complete car rental solution suitable for startups and growing rental businesses.",
+                description: "The Car Rental Booking Application is a feature-rich web platform that I developed using PHP, JavaScript, and MySQL to streamline the end-to-end vehicle rental process. My work involved building core functionalities such as car search, price comparison, reward point application, add-on selection, and a smooth booking flow with real-time availability and pricing updates. I also contributed to developing multilingual support, responsive UI layouts, and various performance optimizations including lazy loading and caching.On the admin side, I worked on modules for managing vehicles, customers, reservations, pricing rules, offers, and reward systems. A key highlight of the project was implementing a dynamic reward engine, where users earn points based on their rental value and redeem them on future bookings.The platform also includes features like automated notifications, payment handling, office- hours fee logic, and add - on services, making it a scalable solution for car rental businesses.",
                 liveurl: "https://carrentalsbooking.com/"
             },
             {
@@ -34,6 +34,13 @@ const localData = {
                 image: { url: 'https://my-portfolio-mu-blond.vercel.app/assets/northstar.png' },
                 description: "NoethStar is a React and Redux-driven cloth shopping site, provides a user-friendly interface with a diverse range of clothing items. Key features include a dynamic shopping cart, secure user authentication, and efficient state management with Redux. The platform ensures a responsive design for seamless browsing across devices, offering a modern and enjoyable shopping experience.",
                 liveurl: "https://north-star-react-app.vercel.app/"
+            },
+            {
+                title: "RezGlobe",
+                techStack: ["JavaScript", "CSS", "HTML", "PHP"],
+                image: { url: img4 },
+                description: "RexGloade RMS is a powerful, centralized Rate Management System designed specifically for car rental companies to streamline and automate their pricing operations. The platform enables rental businesses to create, manage, and update rates across multiple locations, seasons, vehicle categories, and customer segments—all from a single, intuitive interface.Built to eliminate manual rate adjustments, RexGloade ensures accuracy, consistency, and real- time updates across all digital platforms.Rental companies can optimize revenue by leveraging dynamic pricing rules, time - based pricing, peak - hour logic, and automated charges such as one - way fees, night fees, distance limits, and add - ons.",
+                liveurl: "https://rezglobe.com/"
             },
             {
                 title: "Maa Foundation",
@@ -50,13 +57,7 @@ const localData = {
                 liveurl: "https://poke-world-delta.vercel.app/"
             },
 
-            {
-                title: "RezGlobe",
-                techStack: ["JavaScript", "CSS", "HTML", "PHP"],
-                image: { url: img4 },
-                description: "RexGloade RMS is a powerful, centralized Rate Management System designed specifically for car rental companies to streamline and automate their pricing operations. The platform enables rental businesses to create, manage, and update rates across multiple locations, seasons, vehicle categories, and customer segments—all from a single, intuitive interface.Built to eliminate manual rate adjustments, RexGloade ensures accuracy, consistency, and real- time updates across all digital platforms.Rental companies can optimize revenue by leveraging dynamic pricing rules, time - based pricing, peak - hour logic, and automated charges such as one - way fees, night fees, distance limits, and add - ons.",
-                liveurl: "https://rezglobe.com/"
-            },
+
             // {
             //     title: "RomiFinance",
             //     techStack: ["CSS", "HTML"],
@@ -93,6 +94,8 @@ const Projects = () => {
 
     useEffect(() => {
         if (localData && localData.user && localData.user.projects) {
+
+            // Extract tech stacks
             const techStacks = localData.user.projects.reduce((stacks, project) => {
                 project.techStack.forEach(tech => {
                     const existingStack = stacks.find(item => item.tech === tech);
@@ -104,9 +107,14 @@ const Projects = () => {
                 });
                 return stacks;
             }, []);
+
             setUniqueTechStacks(techStacks);
+
+            // ✅ Load all projects when page loads
+            setFilteredProjects(localData.user.projects);
         }
     }, []);
+
 
     const filterProjectsByTech = (tech) => {
         if (localData && localData.user && localData.user.projects) {
