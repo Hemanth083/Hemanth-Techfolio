@@ -202,17 +202,25 @@
   }
   .form,
   .formsub {
+    /* display: none; */
+    width: 100% !important;
+  }
+  .mobileview {
+    display: block !important;
+    margin-top: 20px;
+    margin-bottom: 100px;
+  }
+  .desktopview {
     display: none;
   }
-  .big{
+  .big {
     height: 80vh;
     background-color: rgba(1, 0, 0, 0.833) !important;
   }
-  .header-details{
-        background-color: rgba(1, 0, 0, 0.553) !important;
+  .header-details {
+    background-color: rgba(1, 0, 0, 0.553) !important;
   }
-  .header-name{
+  .header-name {
     color: white;
   }
-  
 }

@@ -7,6 +7,8 @@ import reactLogo from '../assets/reactLogo.webp';
 import vercelLogo from '../assets/vercelLogo.svg';
 import reduxLogo from '../assets/resuxLogo.png';
 import githubLogo from '../assets/gitHubLogo.png';
+import php from '../assets/php.png';
+
 // import bootstrapLogo from '../assets/bootstrap-logo.png';
 // import tailwindLogo from '../assets/tailwind-logo.png'
 
@@ -31,6 +33,7 @@ const Skills = ({ useData }) => {
         { name: 'Vercel', image: vercelLogo },
         { name: 'Redux', image: reduxLogo },
         { name: 'Github', image: githubLogo },
+        { name: 'PHP', image: php },
         // { name: 'Bootstrap', image: bootstrapLogo },
         // { name: 'Tailwind', image: tailwindLogo },
     ];

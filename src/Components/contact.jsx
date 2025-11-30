@@ -116,7 +116,7 @@ const Contact = () => {
                                 borderBottom: "2px solid salmon",
                             }}
                             type="submit"
-                            className="button text-secondary"
+                            className="button text-secondary desktopview"
                         >
                             Send Message
                         </Button>
@@ -136,7 +136,22 @@ const Contact = () => {
                             />
                         </Form.Group>
                     </div>
-
+                    <Button
+                        style={{
+                            background: "transparent",
+                            borderRadius: "0px",
+                            border: "none",
+                            outline: "none",
+                            boxShadow: "none",
+                            borderTop: "2px solid salmon",
+                            borderBottom: "2px solid salmon",
+                            display: "none",
+                        }}
+                        type="submit"
+                        className="button text-secondary mobileview"
+                    >
+                        Send Message
+                    </Button>
                 </div>
             </Form>
         </div>

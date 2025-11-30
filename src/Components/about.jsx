@@ -22,7 +22,7 @@ const localData = {
             { image: { url: linked }, link: 'https://www.linkedin.com/in/hemanth-n-45b165278/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
         ],
         services: [
-            { image: { url: webDev }, name: 'Front-End development', desc: 'I build applications',  },
+            { image: { url: webDev }, name: 'Front-End development', desc: 'I build applications', },
         ],
     },
 };
@@ -53,7 +53,7 @@ const About = () => {
 
         // Physics values
         const gravity = 1;
-        const friction = 0.7;
+        const friction = 0.4;
 
         const velocities = [];
         const positions = [];
@@ -129,7 +129,7 @@ const About = () => {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
-    
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -140,14 +140,14 @@ const About = () => {
                 {userData && userData.user && userData.user.about && (
                     <div className="bg-dark text-white Image-Container d-flex align-items-center about-Container justify-content-center flex-row w-100">
                         <div className="w-50 h-100 cropped-image-container d-flex align-items-center justify-content-center">
-                                <img src={myImage} alt="Profile" className={`img-wrapper ${expanded ? "img-expanded" : ""}`} />
+                            <img src={myImage} alt="Profile" className={`img-wrapper ${expanded ? "img-expanded" : ""}`} />
                         </div>
                         <div className="about-content w-50 h-50 d-flex align-items-center justify-content-center">
                             <div className="w-75 d-flex align-items-start justify-content-start flex-column">
                                 <p className="text-secondary modal-title paragraph">Front-end developer</p>
                                 <h1 className="display-1 Name">Hemanth</h1>
                                 <p className="text-secondary paragraph">
-                                    I am Hemanth, a frontend web developer skilled in HTML, CSS, JavaScript, and React with proficiency in state management using Redux. I specialize in building responsive websites with visually appealing designs. With expertise in JavaScript frameworks, particularly React and Redux, I excel in creating dynamic and interactive web applications. I take pride in consistently exceeding client expectations with my exceptional frontend development abilities.
+                                    Frontend Developer with 1+ year of experience building scalable, responsive, and SEO-optimized web applications. Skilled in React, JavaScript, Tailwind, and PHP, with a strong focus on clean UI, performance, and usability. I have delivered production-ready features, improved site performance, and built complete end-to-end solutions including reward systems and multilingual support. I enjoy turning complex requirements into intuitive user experiences and consistently contribute to improving product quality and team outcomes.
                                 </p>
                                 <div className="social-media justify-content-between align-items-center d-flex mt-3">
                                     {userData.user.social_handles.map((social, index) => (
