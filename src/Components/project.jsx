@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Container, Row, Col, Button, Dropdown, Modal } from 'react-bootstrap';
 import "./project.css";
 import img1 from "../assets/img1.png"
@@ -97,26 +97,29 @@ const Projects = () => {
         return () => clearTimeout(animationTimeout);
     }, []);
 
-    useEffect(() => {
-        if (localData && localData.user && localData.user.projects) {
+    const stableProjectOrder = useRef(null);
 
-            // Extract tech stacks
+    useEffect(() => {
+        if (localData?.user?.projects) {
+
+            // Freeze order only once
+            if (!stableProjectOrder.current) {
+                stableProjectOrder.current = [...localData.user.projects].reverse();
+            }
+
+            // Unique stacks
             const techStacks = localData.user.projects.reduce((stacks, project) => {
                 project.techStack.forEach(tech => {
-                    const existingStack = stacks.find(item => item.tech === tech);
-                    if (existingStack) {
-                        existingStack.count++;
-                    } else {
-                        stacks.push({ tech, count: 1 });
-                    }
+                    const existing = stacks.find(item => item.tech === tech);
+                    existing ? existing.count++ : stacks.push({ tech, count: 1 });
                 });
                 return stacks;
             }, []);
 
             setUniqueTechStacks(techStacks);
 
-            // ✅ Load all projects when page loads
-            setFilteredProjects([...localData.user.projects].reverse());
+            // Always use the frozen order
+            setFilteredProjects(stableProjectOrder.current);
         }
     }, []);
 
