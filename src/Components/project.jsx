@@ -15,6 +15,41 @@ const localData = {
     user: {
         projects: [
             {
+                title: "Old Portfolio",
+                techStack: ["JavaScript", "CSS", "HTML"],
+                image: { url: img5 },
+                description: "This is my previous Portfolio where it's also responsive and user-friendly ",
+                liveurl: "https://my-portfolio-mu-blond.vercel.app/"
+            },
+            {
+                title: "PokeWorld",
+                techStack: ["React", "JavaScript", "CSS", "Axios", "Bootstrap"],
+                image: { url: img1 },
+                description: "This Application is build to display a list of pokimons using pokiAPI",
+                liveurl: "https://poke-world-delta.vercel.app/"
+            },
+            {
+                title: "Maa Foundation",
+                techStack: ["React", "JavaScript", "CSS", "Tailwind CSS", "GitHub"],
+                image: { url: img3 },
+                description: "The Maa Foundation Platform is a web application aimed at empowering communities through educational and welfare programs.Key challenges included efficiently managing and displaying large volumes of educational resources, which required implementing pagination in React.js.Additionally, ensuring a fully responsive design across various devices involved extensive testing and fine- tuning to maintain UI consistency. ",
+                liveurl: "https://maa-foundation.vercel.app"
+            },
+            {
+                title: "RezGlobe",
+                techStack: ["JavaScript", "CSS", "HTML", "PHP"],
+                image: { url: img4 },
+                description: "RexGloade RMS is a powerful, centralized Rate Management System designed specifically for car rental companies to streamline and automate their pricing operations. The platform enables rental businesses to create, manage, and update rates across multiple locations, seasons, vehicle categories, and customer segments—all from a single, intuitive interface.Built to eliminate manual rate adjustments, RexGloade ensures accuracy, consistency, and real- time updates across all digital platforms.Rental companies can optimize revenue by leveraging dynamic pricing rules, time - based pricing, peak - hour logic, and automated charges such as one - way fees, night fees, distance limits, and add - ons.",
+                liveurl: "https://rezglobe.com/"
+            },
+            {
+                title: "NorthStar",
+                techStack: ["React", "HTML", "JavaScript", "CSS", "Redux"],
+                image: { url: 'https://my-portfolio-mu-blond.vercel.app/assets/northstar.png' },
+                description: "NoethStar is a React and Redux-driven cloth shopping site, provides a user-friendly interface with a diverse range of clothing items. Key features include a dynamic shopping cart, secure user authentication, and efficient state management with Redux. The platform ensures a responsive design for seamless browsing across devices, offering a modern and enjoyable shopping experience.",
+                liveurl: "https://north-star-react-app.vercel.app/"
+            },
+            {
                 title: "North Car Rentals",
                 techStack: ["JavaScript", "CSS", "HTML", "PHP"],
                 image: { url: img6 },
@@ -28,34 +63,10 @@ const localData = {
                 description: "The Car Rental Booking Application is a feature-rich web platform that I developed using PHP, JavaScript, and MySQL to streamline the end-to-end vehicle rental process. My work involved building core functionalities such as car search, price comparison, reward point application, add-on selection, and a smooth booking flow with real-time availability and pricing updates. I also contributed to developing multilingual support, responsive UI layouts, and various performance optimizations including lazy loading and caching.On the admin side, I worked on modules for managing vehicles, customers, reservations, pricing rules, offers, and reward systems. A key highlight of the project was implementing a dynamic reward engine, where users earn points based on their rental value and redeem them on future bookings.The platform also includes features like automated notifications, payment handling, office- hours fee logic, and add - on services, making it a scalable solution for car rental businesses.",
                 liveurl: "https://carrentalsbooking.com/"
             },
-            {
-                title: "NorthStar",
-                techStack: ["React", "HTML", "JavaScript", "CSS", "Redux"],
-                image: { url: 'https://my-portfolio-mu-blond.vercel.app/assets/northstar.png' },
-                description: "NoethStar is a React and Redux-driven cloth shopping site, provides a user-friendly interface with a diverse range of clothing items. Key features include a dynamic shopping cart, secure user authentication, and efficient state management with Redux. The platform ensures a responsive design for seamless browsing across devices, offering a modern and enjoyable shopping experience.",
-                liveurl: "https://north-star-react-app.vercel.app/"
-            },
-            {
-                title: "RezGlobe",
-                techStack: ["JavaScript", "CSS", "HTML", "PHP"],
-                image: { url: img4 },
-                description: "RexGloade RMS is a powerful, centralized Rate Management System designed specifically for car rental companies to streamline and automate their pricing operations. The platform enables rental businesses to create, manage, and update rates across multiple locations, seasons, vehicle categories, and customer segments—all from a single, intuitive interface.Built to eliminate manual rate adjustments, RexGloade ensures accuracy, consistency, and real- time updates across all digital platforms.Rental companies can optimize revenue by leveraging dynamic pricing rules, time - based pricing, peak - hour logic, and automated charges such as one - way fees, night fees, distance limits, and add - ons.",
-                liveurl: "https://rezglobe.com/"
-            },
-            {
-                title: "Maa Foundation",
-                techStack: ["React", "JavaScript", "CSS", "Tailwind CSS", "GitHub"],
-                image: { url: img3 },
-                description: "The Maa Foundation Platform is a web application aimed at empowering communities through educational and welfare programs.Key challenges included efficiently managing and displaying large volumes of educational resources, which required implementing pagination in React.js.Additionally, ensuring a fully responsive design across various devices involved extensive testing and fine- tuning to maintain UI consistency. ",
-                liveurl: "https://maa-foundation.vercel.app"
-            },
-            {
-                title: "PokeWorld",
-                techStack: ["React", "JavaScript", "CSS", "Axios", "Bootstrap"],
-                image: { url: img1 },
-                description: "This Application is build to display a list of pokimons using pokiAPI",
-                liveurl: "https://poke-world-delta.vercel.app/"
-            },
+
+
+
+
 
 
             // {
@@ -65,13 +76,7 @@ const localData = {
             //     description: "A simple HTML and CSS project for finance",
             //     liveurl: "https://romi-finance-lyart.vercel.app/"
             // },
-            {
-                title: "Old Portfolio",
-                techStack: ["JavaScript", "CSS", "HTML"],
-                image: { url: img5 },
-                description: "This is my previous Portfolio where it's also responsive and user-friendly ",
-                liveurl: "https://my-portfolio-mu-blond.vercel.app/"
-            },
+
 
         ]
     }
@@ -111,7 +116,7 @@ const Projects = () => {
             setUniqueTechStacks(techStacks);
 
             // ✅ Load all projects when page loads
-            setFilteredProjects(localData.user.projects);
+            setFilteredProjects([...localData.user.projects].reverse());
         }
     }, []);
 
