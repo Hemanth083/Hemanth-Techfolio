@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import { Container, Row, Col, Button, Dropdown, Modal } from 'react-bootstrap';
+import { Container, Row, Col,  Modal } from 'react-bootstrap';
 import "./project.css";
 import img1 from "../assets/img1.png"
-import img2 from "../assets/img2.png"
+//import img2 from "../assets/img2.png"
 import img3 from "../assets/img3.png"
 import img4 from "../assets/img4.png"
 import img5 from "../assets/img5.png"
@@ -85,7 +85,7 @@ const localData = {
 const Projects = () => {
     const [animationTriggered, setAnimationTriggered] = useState(false);
     const [filteredProjects, setFilteredProjects] = useState([]);
-    const [uniqueTechStacks, setUniqueTechStacks] = useState([]);
+    //const [uniqueTechStacks, setUniqueTechStacks] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [selectedProject, setSelectedProject] = useState(null);
 
@@ -108,15 +108,15 @@ const Projects = () => {
             }
 
             // Unique stacks
-            const techStacks = localData.user.projects.reduce((stacks, project) => {
-                project.techStack.forEach(tech => {
-                    const existing = stacks.find(item => item.tech === tech);
-                    existing ? existing.count++ : stacks.push({ tech, count: 1 });
-                });
-                return stacks;
-            }, []);
+            // const techStacks = localData.user.projects.reduce((stacks, project) => {
+            //     project.techStack.forEach(tech => {
+            //         const existing = stacks.find(item => item.tech === tech);
+            //         existing ? existing.count++ : stacks.push({ tech, count: 1 });
+            //     });
+            //     return stacks;
+            // }, []);
 
-            setUniqueTechStacks(techStacks);
+            //setUniqueTechStacks(techStacks);
 
             // Always use the frozen order
             setFilteredProjects(stableProjectOrder.current);
@@ -124,18 +124,18 @@ const Projects = () => {
     }, []);
 
 
-    const filterProjectsByTech = (tech) => {
-        if (localData && localData.user && localData.user.projects) {
-            const filtered = localData.user.projects.filter(project =>
-                project.techStack.includes(tech)
-            );
-            setFilteredProjects(filtered);
-        }
-    };
+    // const filterProjectsByTech = (tech) => {
+    //     if (localData && localData.user && localData.user.projects) {
+    //         const filtered = localData.user.projects.filter(project =>
+    //             project.techStack.includes(tech)
+    //         );
+    //         setFilteredProjects(filtered);
+    //     }
+    // };
 
-    const resetFilter = () => {
-        setFilteredProjects([]);
-    };
+    // const resetFilter = () => {
+    //     setFilteredProjects([]);
+    // };
 
     const openModal = (project) => {
         setSelectedProject(project);
@@ -152,7 +152,7 @@ const Projects = () => {
             <div className="w-100 bg-dark p-5 d-flex flex-column align-items-center justify-content-center">
                 <Container>
                     <h1 className="header border-bottom mb-5">Projects</h1>
-                    <div className="mb-3 w-100 d-flex align-items-center justify-content-center flex-row pt-4 pb-4">
+                    {/* <div className="mb-3 w-100 d-flex align-items-center justify-content-center flex-row pt-4 pb-4">
                         <Dropdown>
                             <Dropdown.Toggle id="dropdown-basic" className="bg-transparent border-light custom-dropdown-toggle">
                                 Filter by Technology
@@ -167,7 +167,7 @@ const Projects = () => {
                             </Dropdown.Menu>
                         </Dropdown>
                         <Button onClick={resetFilter} type="button" className="ms-4 bg-transparent border-light custom-button">Reset</Button>
-                    </div>
+                    </div> */}
                     <Row>
                         {(
                             (filteredProjects.length > 0 ? filteredProjects : (localData && localData.user && localData.user.projects) ? localData.user.projects : [])
