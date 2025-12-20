@@ -146,7 +146,7 @@ const Projects = () => {
         setShowModal(false);
         setSelectedProject(null);
     };
-    const projects = [...localData.user.projects].reverse(); // optional
+    const projects = [...localData.user.projects]; // optional
 
     return (
         <div style={{ height: "auto" }} className={`slide-in-left ${animationTriggered ? 'show' : ''}`}>
