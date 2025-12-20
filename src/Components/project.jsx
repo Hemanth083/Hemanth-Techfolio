@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
-import { Container, Row, Col,  Modal } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
+import { Container, Row, Col, Modal } from 'react-bootstrap';
 import "./project.css";
 import img1 from "../assets/img1.png"
 //import img2 from "../assets/img2.png"
@@ -84,7 +84,7 @@ const localData = {
 
 const Projects = () => {
     const [animationTriggered, setAnimationTriggered] = useState(false);
-    const [filteredProjects, setFilteredProjects] = useState([]);
+    // const [filteredProjects, setFilteredProjects] = useState([]);
     //const [uniqueTechStacks, setUniqueTechStacks] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [selectedProject, setSelectedProject] = useState(null);
@@ -97,31 +97,31 @@ const Projects = () => {
         return () => clearTimeout(animationTimeout);
     }, []);
 
-    const stableProjectOrder = useRef(null);
+    //const stableProjectOrder = useRef(null);
 
-    useEffect(() => {
-        if (localData?.user?.projects) {
+    // useEffect(() => {
+    //     if (localData?.user?.projects) {
 
-            // Freeze order only once
-            if (!stableProjectOrder.current) {
-                stableProjectOrder.current = [...localData.user.projects].reverse();
-            }
+    //         // Freeze order only once
+    //         if (!stableProjectOrder.current) {
+    //             stableProjectOrder.current = [...localData.user.projects].reverse();
+    //         }
 
-            // Unique stacks
-            // const techStacks = localData.user.projects.reduce((stacks, project) => {
-            //     project.techStack.forEach(tech => {
-            //         const existing = stacks.find(item => item.tech === tech);
-            //         existing ? existing.count++ : stacks.push({ tech, count: 1 });
-            //     });
-            //     return stacks;
-            // }, []);
+    //         // Unique stacks
+    //         // const techStacks = localData.user.projects.reduce((stacks, project) => {
+    //         //     project.techStack.forEach(tech => {
+    //         //         const existing = stacks.find(item => item.tech === tech);
+    //         //         existing ? existing.count++ : stacks.push({ tech, count: 1 });
+    //         //     });
+    //         //     return stacks;
+    //         // }, []);
 
-            //setUniqueTechStacks(techStacks);
+    //         //setUniqueTechStacks(techStacks);
 
-            // Always use the frozen order
-            setFilteredProjects(stableProjectOrder.current);
-        }
-    }, []);
+    //         // Always use the frozen order
+    //        // setFilteredProjects(stableProjectOrder.current);
+    //     }
+    // }, []);
 
 
     // const filterProjectsByTech = (tech) => {
@@ -146,6 +146,7 @@ const Projects = () => {
         setShowModal(false);
         setSelectedProject(null);
     };
+    const projects = [...localData.user.projects].reverse(); // optional
 
     return (
         <div style={{ height: "auto" }} className={`slide-in-left ${animationTriggered ? 'show' : ''}`}>
@@ -170,19 +171,17 @@ const Projects = () => {
                     </div> */}
                     <Row>
                         {(
-                            (filteredProjects.length > 0 ? filteredProjects : (localData && localData.user && localData.user.projects) ? localData.user.projects : [])
-                                .reverse()
-                                .map((project, index) => (
-                                    <Col key={index} md={6} className="mb-5">
-                                        <div className="curser project-image-container " style={{ height: "70%" }} onClick={() => openModal(project)}>
-                                            <img className="img-fluid project-image" src={project.image.url} alt={`Project ${index}`} />
-                                        </div>
-                                        <div className=" h-25 pt-3 pl-3 pb-5 bg-black rounded-1 titlr opacity-50">
-                                            <p className="header">{project.techStack.join(', ')}</p>
-                                            <h1 className="header">{project.title}</h1>
-                                        </div>
-                                    </Col>
-                                ))
+                            projects.map((project, index) => (
+                                <Col key={index} md={6} className="mb-5">
+                                    <div className="curser project-image-container " style={{ height: "70%" }} onClick={() => openModal(project)}>
+                                        <img className="img-fluid project-image" src={project.image.url} alt={`Project ${index}`} />
+                                    </div>
+                                    <div className=" h-25 pt-3 pl-3 pb-5 bg-black rounded-1 titlr opacity-50">
+                                        <p className="header">{project.techStack.join(', ')}</p>
+                                        <h1 className="header">{project.title}</h1>
+                                    </div>
+                                </Col>
+                            ))
                         )}
                     </Row>
                 </Container>
