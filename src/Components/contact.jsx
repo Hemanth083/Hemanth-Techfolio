@@ -30,7 +30,7 @@ const Contact = () => {
         user: {
             about: {
                 phoneNumber: "6362919752",
-                address: "#172 ,5th cross ,Raghavendra Layout ,Begur ,Bengaluru 560068",
+                address: "Bengaluru 560068",
             },
             email: "hemantheaddress@gmail.com",
         },
