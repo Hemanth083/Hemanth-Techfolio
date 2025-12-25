@@ -43,13 +43,13 @@ const localData = {
                 description: "RexGloade RMS is a powerful, centralized Rate Management System designed specifically for car rental companies to streamline and automate their pricing operations. The platform enables rental businesses to manage rates across locations, seasons, and vehicle categories with real-time updates and dynamic pricing rules.",
                 liveurl: "https://rezglobe.com/"
             },
-            {
-                title: "Maa Foundation",
-                techStack: ["React", "JavaScript", "CSS", "Tailwind CSS", "GitHub"],
-                image: { url: img3 },
-                description: "The Maa Foundation Platform is a web application aimed at empowering communities through educational and welfare programs. Key challenges included handling large data sets with pagination and ensuring full responsiveness across devices.",
-                liveurl: "https://maa-foundation.vercel.app"
-            },
+            // {
+            //     title: "Maa Foundation",
+            //     techStack: ["React", "JavaScript", "CSS", "Tailwind CSS", "GitHub"],
+            //     image: { url: img3 },
+            //     description: "The Maa Foundation Platform is a web application aimed at empowering communities through educational and welfare programs. Key challenges included handling large data sets with pagination and ensuring full responsiveness across devices.",
+            //     liveurl: "https://maa-foundation.vercel.app"
+            // },
             {
                 title: "PokeWorld",
                 techStack: ["React", "JavaScript", "CSS", "Axios", "Bootstrap"],
