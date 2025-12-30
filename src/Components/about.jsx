@@ -19,7 +19,9 @@ const localData = {
                 image: { url: insta }, link: 'https://www.instagram.com/_____.hemanth._____/'
             },
             { image: { url: x }, link: 'https://x.com/Hemanth__N' },
-            { image: { url: linked }, link: 'https://www.linkedin.com/in/hemanth-n-45b165278/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+            {
+                image: { url: linked }, link: 'https://www.linkedin.com/in/hemanth-frontend-developer'
+            },
         ],
         services: [
             { image: { url: webDev }, name: 'Front-End development', desc: 'I build applications', },
