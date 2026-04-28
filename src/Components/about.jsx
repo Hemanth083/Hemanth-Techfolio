@@ -24,7 +24,8 @@ const localData = {
             },
         ],
         services: [
-            { image: { url: webDev }, name: 'Front-End development', desc: 'I build applications', },
+            {
+                image: { url: webDev }, name: 'Frontend Developer | React | Full Stack (Django, MongoDB)', desc: 'I build applications', },
         ],
     },
 };
@@ -146,11 +147,19 @@ const About = () => {
                         </div>
                         <div className="about-content w-50 h-50 d-flex align-items-center justify-content-center">
                             <div className="w-75 d-flex align-items-start justify-content-start flex-column">
-                                <p className="text-secondary modal-title paragraph">Front-end developer</p>
-                                <h1 className="display-1 Name">Hemanth</h1>
+                                <p className="text-secondary modal-title paragraph">
+                                    Frontend Developer | React | Full Stack (Django, MongoDB)
+                                </p>                                <h1 className="display-1 Name">Hemanth N</h1>
                                 <p className="text-secondary paragraph">
-                                    Frontend Developer with 1+ year of experience building scalable, responsive, and SEO-optimized web applications. Skilled in React, JavaScript, Tailwind, and PHP, with a strong focus on clean UI, performance, and usability. I have delivered production-ready features, improved site performance, and built complete end-to-end solutions including reward systems and multilingual support. I enjoy turning complex requirements into intuitive user experiences and consistently contribute to improving product quality and team outcomes.
-                                </p>
+                                    Frontend Developer with 2 years of professional experience building scalable, responsive, and SEO-optimized web applications. Proficient in React, JavaScript, HTML, and CSS, with a strong focus on performance, usability, and clean UI design.
+
+                                    Currently working at Alvo Mobility Group, contributing to production-grade applications used by real customers, where I have improved performance, optimized SEO, and delivered high-quality user experiences.
+
+                                    Expanding into Full Stack Development with hands-on experience in Django, Python, and MongoDB, building end-to-end scalable applications and RESTful APIs.
+
+                                    Skilled in translating complex requirements into intuitive, user-focused solutions, with a strong emphasis on performance optimization and maintainable code.
+
+                                    Open to Frontend, React, or Full Stack Developer opportunities.                                </p>
                                 <div className="social-media justify-content-between align-items-center d-flex mt-3">
                                     {userData.user.social_handles.map((social, index) => (
                                         <div

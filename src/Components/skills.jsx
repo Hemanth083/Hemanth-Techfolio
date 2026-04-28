@@ -8,6 +8,11 @@ import vercelLogo from '../assets/vercelLogo.svg';
 import reduxLogo from '../assets/resuxLogo.png';
 import githubLogo from '../assets/gitHubLogo.png';
 import php from '../assets/php.png';
+import python from '../assets/python.png';
+import Django from '../assets/Django.png';
+import MongoDb from '../assets/mongoDb.png';
+
+
 
 // import bootstrapLogo from '../assets/bootstrap-logo.png';
 // import tailwindLogo from '../assets/tailwind-logo.png'
@@ -30,10 +35,13 @@ const Skills = ({ useData }) => {
         { name: 'CSS', image: cssLogo },
         { name: 'Javascript', image: jsLogo },
         { name: 'React', image: reactLogo },
-        { name: 'Vercel', image: vercelLogo },
+        { name: 'Python', image: python },
+        { name: 'Django', image: Django },
+        { name: 'MongoDB', image: MongoDb },
         { name: 'Redux', image: reduxLogo },
-        { name: 'Github', image: githubLogo },
         { name: 'PHP', image: php },
+        { name: 'Github', image: githubLogo },
+        { name: 'Vercel', image: vercelLogo },
         // { name: 'Bootstrap', image: bootstrapLogo },
         // { name: 'Tailwind', image: tailwindLogo },
     ];

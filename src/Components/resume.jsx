@@ -36,7 +36,7 @@ const Resume = () => {
                     company_name: "Alvo Mobility LLP",
                     startDate: "2024-09-12",
                     endDate: "Present",
-                    jobTitle: "Software Engineer (Front-end developer)",
+                    jobTitle: "Software Engineer (FullStack Developer)",
                     summary: "Developed and shipped scalable web applications while collaborating with cross-functional teams. Improved user experience through performance optimization, responsive UI design, and clean code practices. Took ownership of key features from planning to deployment, contributing to better SEO performance and overall project quality. Implemented a reward points system that allows users to earn points based on reservation value and redeem them on future bookings."
                 },
                 {
@@ -75,13 +75,13 @@ const Resume = () => {
     return (
         <div className={`h-100 slide-in-left ${animationTriggered ? 'show' : ''}`}>
             <div className="w-100 h-100 pt-3 d-flex align-items-start gap-5 resumeAlign justify-content-center bg-dark">
-                <div style={{ width: "60%" }} className="d-flex resumeElement align-items-start justify-content-start flex-column">
-                    <h1 className="w-75 mb-5 border-bottom text-secondary heading">Experience</h1>
-                    <div className="w-100 d-flex align-items-center justify-content-center flex-column education w-75">
+                <div style={{ width: "90%" }} className="d-flex resumeElement align-items-start justify-content-start flex-column">
+                    <h1 className="w-100 mb-5 border-bottom text-secondary heading">Experience</h1>
+                    <div className="w-100 d-flex align-items-center justify-content-center flex-column education w-100">
                         {userData.user.timeline.map((item, index) => {
                             if (!item.forEducation) {
                                 return (
-                                    <div className={`bg-black width mt-3 ${index % 2 === 0 ? 'bg-opacity-50' : 'bg-opacity-25'} p-4`} key={index}>
+                                    <div className={`bg-black width  mt-3 ${index % 2 === 0 ? 'bg-opacity-50' : 'bg-opacity-25'} p-4`} key={index}>
                                         <h2 className="header fs-5">{item.company_name} ({formatYear(item.startDate)}, {formatYear(item.endDate)})</h2>
                                         <h3 className="header fs-1">{item.jobTitle}</h3>
                                         <p className="header text-secondary">{item.summary}</p>
@@ -91,7 +91,7 @@ const Resume = () => {
                             return null;
                         })}
                     </div>
-                    <h1 className="w-75 mb-5  mt-5 border-bottom text-secondary heading">Education</h1>
+                    <h1 className="w-100 mb-5  mt-5 border-bottom text-secondary heading">Education</h1>
                     <div className="w-100 d-flex align-items-center justify-content-center flex-column education">
                         {userData.user.timeline.map((item, index) => {
                             if (item.forEducation) {
@@ -108,7 +108,7 @@ const Resume = () => {
                     </div>
 
                 </div>
-                <div style={{ width: '30%' }} className="resumeSkills">
+                {/* <div style={{ width: '30%' }} className="resumeSkills">
                     <h2 className="header resumeSkills mb-5 border-bottom h-100 text-start">Skills</h2>
                     {userData.user.skills.map((skill, index) => (
                         <div key={index} className="d-flex align-items-start flex-column w-100 justify-content-center">
@@ -121,10 +121,10 @@ const Resume = () => {
                             />
                         </div>
                     ))}
-                </div>
+                </div> */}
             </div>
             <div className="w-100 text-center bg-dark">
-                <a href="https://drive.google.com/uc?export=download&id=1npJoa3_xJAQlrOI0u57NouTgzb4_E5r7">
+                <a href="https://drive.google.com/uc?export=download&id=12LdFef7u9FcE2043Es4W36eupcO7DkAo">
                     <Button type="text" className="Nothing border-dark mt-5 downloadCV">Download CV</Button>
                 </a>
             </div>
