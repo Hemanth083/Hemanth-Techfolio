@@ -151,15 +151,7 @@ const About = () => {
                                     Frontend Developer | React | Full Stack (Django, MongoDB)
                                 </p>                                <h1 className="display-1 Name">Hemanth N</h1>
                                 <p className="text-secondary paragraph">
-                                    Frontend Developer with 2 years of professional experience building scalable, responsive, and SEO-optimized web applications. Proficient in React, JavaScript, HTML, and CSS, with a strong focus on performance, usability, and clean UI design.
-
-                                    Currently working at Alvo Mobility Group, contributing to production-grade applications used by real customers, where I have improved performance, optimized SEO, and delivered high-quality user experiences.
-
-                                    Expanding into Full Stack Development with hands-on experience in Django, Python, and MongoDB, building end-to-end scalable applications and RESTful APIs.
-
-                                    Skilled in translating complex requirements into intuitive, user-focused solutions, with a strong emphasis on performance optimization and maintainable code.
-
-                                    Open to Frontend, React, or Full Stack Developer opportunities.                                </p>
+                                Frontend Developer with 2 years of experience building scalable, responsive, and SEO-optimized web applications using React, JavaScript, HTML, and CSS. Currently working at Alvo Mobility Group, contributing to production-grade applications with a focus on performance, usability, and clean UI design. Also expanding into Full Stack Development with hands-on experience in Django, Python, and MongoDB to build scalable applications and RESTful APIs. Open to Frontend, React, and Full Stack Developer opportunities.                              </p>
                                 <div className="social-media justify-content-between align-items-center d-flex mt-3">
                                     {userData.user.social_handles.map((social, index) => (
                                         <div
