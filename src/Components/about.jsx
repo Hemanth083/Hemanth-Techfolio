@@ -25,7 +25,8 @@ const localData = {
         ],
         services: [
             {
-                image: { url: webDev }, name: 'Frontend Developer | React | Full Stack (Django, MongoDB)', desc: 'I build applications', },
+                image: { url: webDev }, name: 'Frontend Developer | React | Full Stack (Django, MongoDB)', desc: 'I build applications',
+            },
         ],
     },
 };
@@ -151,7 +152,7 @@ const About = () => {
                                     Frontend Developer | React | Full Stack (Django, MongoDB)
                                 </p>                                <h1 className="display-1 Name">Hemanth N</h1>
                                 <p className="text-secondary paragraph">
-                                Frontend Developer with 2 years of experience building scalable, responsive, and SEO-optimized web applications using React, JavaScript, HTML, and CSS. Currently working at Alvo Mobility Group, contributing to production-grade applications with a focus on performance, usability, and clean UI design. Also expanding into Full Stack Development with hands-on experience in Django, Python, and MongoDB to build scalable applications and RESTful APIs. Open to Frontend, React, and Full Stack Developer opportunities.                              </p>
+                                    Software Engineer with 2+ years of experience developing full-stack web applications using Python, Django, Django REST Framework, React.js, JavaScript, TypeScript, SQL, MySQL, and MongoDB. Skilled in building scalable, responsive applications, integrating RESTful APIs, optimizing performance, and maintaining production systems. Experienced working in Agile environments, collaborating with cross-functional teams, and delivering clean, maintainable, and high-quality software solutions.                          </p>
                                 <div className="social-media justify-content-between align-items-center d-flex mt-3">
                                     {userData.user.social_handles.map((social, index) => (
                                         <div
