@@ -124,7 +124,7 @@ const Resume = () => {
                 </div> */}
             </div>
             <div className="w-100 text-center bg-dark">
-                <a href="https://drive.google.com/uc?export=download&id=12LdFef7u9FcE2043Es4W36eupcO7DkAo">
+                <a href="https://drive.google.com/uc?export=download&id=1NANY1PtH4sDQ0evdlBEPifv_L--89utK">
                     <Button type="text" className="Nothing border-dark mt-5 downloadCV">Download CV</Button>
                 </a>
             </div>
